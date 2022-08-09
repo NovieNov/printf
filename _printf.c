@@ -20,29 +20,17 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-<<<<<<< HEAD
-			n += _putchar(format[i]);
-=======
 			count += _putchar(format[i]);
->>>>>>> 53a0e1f5e27dc7766426391793e8be421304c8bc
 			i++;
 		}
 		else if (format[i] == '%' && format[i + 1] != ' ')
 		{
-			switch (format[i + 1])
-			{
-				case 'c':
-					count += _putchar(va_arg(data, int));
-					break;
-				case 's':
-					count += print_string(va_arg(data, char *));
-					break;
-				case '%':
-					count += _putchar('%');
-					break;
-				default:
-					break;
-			}
+			if (format[i + 1] == 'c')
+				count += _putchar(va_arg(data, int));
+			if (format[i + 1] == 's')
+				count += print_string(va_arg(data, char *));
+			if (format[i + 1] == '%')
+				count += _putchar('%');
 			i += 2;
 		}
 	}
