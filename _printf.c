@@ -12,8 +12,9 @@ int _printf(const char *format, ...)
 	int count = 0, i;
 
 	va_list data;
+
 	va_start(data, format);
-	
+
 	i = 0;
 	while (format[i] != '\0')
 	{
