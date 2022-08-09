@@ -43,5 +43,5 @@ int _printf(const char *format, ...)
 	}
 	_putchar('\n');
 	return (count);
-	va_end(data);
+	va_end(dat);
 }
