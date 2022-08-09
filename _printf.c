@@ -5,11 +5,11 @@
 /**
  * _printf - a function that prints arguments passed to it
  * @format: holds the input
- * Return: Return the value of n
+ * Return: Return the value of count
  */
 int _printf(const char *format, ...)
 {
-	int n = 0, i;
+	int count = 0, i;
 
 	va_list data;
 	va_start(data, format);
