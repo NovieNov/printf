@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	int count = 0, i;
 
-	va_list data;
+	va_list dat;
 	va_start(data, format);
 	
 	i = 0;
