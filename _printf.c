@@ -19,21 +19,20 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			_putchar(format[i]);
+			n += _putchar(format[i]);
 			i++;
-			n++;
 		}
 		else if (format[i] == '%' && format[i + 1] != ' ')
 		{
 			switch (format[i + 1])
 			{
 				case 'c':
-					_putchar(va_arg(data, int));
-					n++;
+					n += _putchar(va_arg(data, int));
 					break;
 				default:
 					break;
 			}
+			i += 2;
 		}
 	}
 	_putchar('\n');
