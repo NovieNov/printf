@@ -5,21 +5,26 @@
 /**
  * _printf - a function that prints arguments passed to it
  * @format: holds the input
- * Return: Return the value of n
+ * Return: Return the value of count
  */
 int _printf(const char *format, ...)
 {
-	int n = 0, i;
+	int count = 0, i;
 
 	va_list data;
+
 	va_start(data, format);
-	
+
 	i = 0;
 	while (format[i] != '\0')
 	{
 		if (format[i] != '%')
 		{
+<<<<<<< HEAD
 			n += _putchar(format[i]);
+=======
+			count += _putchar(format[i]);
+>>>>>>> 53a0e1f5e27dc7766426391793e8be421304c8bc
 			i++;
 		}
 		else if (format[i] == '%' && format[i + 1] != ' ')
@@ -27,13 +32,13 @@ int _printf(const char *format, ...)
 			switch (format[i + 1])
 			{
 				case 'c':
-					n += _putchar(va_arg(data, int));
+					count += _putchar(va_arg(data, int));
 					break;
 				case 's':
-					n += print_string(va_arg(data, char *));
+					count += print_string(va_arg(data, char *));
 					break;
 				case '%':
-					n += _putchar('%');
+					count += _putchar('%');
 					break;
 				default:
 					break;
@@ -42,6 +47,6 @@ int _printf(const char *format, ...)
 		}
 	}
 	_putchar('\n');
-	return (n);
+	return (count);
 	va_end(data);
 }
