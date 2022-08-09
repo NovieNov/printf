@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			n += _putchar(format[i]);
-			i++;
+			++i;
 		}
 		else if (format[i] == '%' && format[i + 1] != ' ')
 		{
@@ -28,6 +28,12 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 					n += _putchar(va_arg(data, int));
+					break;
+				case 's':
+					n += print_string(va_arg(data, char *));
+					break;
+				case '%':
+					n += _putchar('%');
 					break;
 				default:
 					break;
