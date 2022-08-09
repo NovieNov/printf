@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 					count += _putchar(va_arg(data, int));
 					break;
 				case 's':
-					n += print_string(va_arg(data, char *));
+					count += print_string(va_arg(data, char *));
 					break;
 				case '%':
 					n += _putchar('%');
