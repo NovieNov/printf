@@ -17,9 +17,24 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (format[i] != '\0')
 	{
-		_putchar(format[i]);
-		i++;
-		n++;
+		if (format[i] != '%')
+		{
+			_putchar(format[i]);
+			i++;
+			n++;
+		}
+		else if (format[i] == '%' && format[i + 1] != ' ')
+		{
+			switch (format[i + 1])
+			{
+				case 'c':
+					_putchar(va_arg(data, int));
+					n++;
+					break;
+				default:
+					break;
+			}
+		}
 	}
 	_putchar('\n');
 	return (n);
